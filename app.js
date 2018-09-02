@@ -10,5 +10,6 @@ client.on('message', msg => {
     msg.reply('Pong!');
   }
 });
-
-client.login('NDg1NDg1NzE0OTMxMzE4Nzk0.DmxR_w.wurK8se9T6gHIGANyGVaALFn4SQ');
+token = require("./discord.js");
+console.log(token.theToken());
+client.login(token.theToken());
