@@ -6,6 +6,7 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
+  console.log('message'); // Show that things are going through for the time being.
   if (msg.content === 'ping') {
     msg.reply('Pong!');
   }
