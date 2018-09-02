@@ -11,5 +11,4 @@ client.on('message', msg => {
   }
 });
 token = require("./discord.js");
-console.log(token.theToken());
 client.login(token.theToken());
