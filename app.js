@@ -1,18 +1,18 @@
-//still getting functions set up correctly. 
+require('dotenv').config();
 const Discord = require('discord.js');
 const client = new Discord.Client();
-var token = require("./config.js");
+
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
 client.on('message', msg => {
+  console.log('message'); // Show that things are going through for the time being.
   if (msg.content === 'create') {
-    token.scheduler("create");
-    msg.reply('created');
-    console.log(msg);
-    //console.log(token.selectQuery());
+    const createPlanner = require('./functions/create_planner.js');
+    var results = createPlanner.createplanner();
+    console.log(results);
   }
 });
 
-client.login(token.theToken());
+client.login(process.env.DISCORD_TOKEN);

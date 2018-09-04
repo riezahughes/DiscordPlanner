@@ -1,10 +1,11 @@
 {
   "name": "discordplanner",
   "version": "1.0.0",
-  "description": "A quick little fun tool",
+  "description": "Really simple idea: Add the bot to discord and allow people to input the days they are available during the week. Have the google sheets api keep track of things and output when neccessary",
   "main": "app.js",
   "dependencies": {
     "discord.js": "^11.4.2",
+    "dotenv": "^6.0.0",
     "node-mysql": "^0.4.2"
   },
   "devDependencies": {},
