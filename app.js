@@ -1,3 +1,4 @@
+//still getting functions set up correctly. 
 const Discord = require('discord.js');
 const client = new Discord.Client();
 var token = require("./config.js");
@@ -6,10 +7,11 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  console.log('message'); // Show that things are going through for the time being.
-  if (msg.content === 'ping') {
-    msg.reply('Pong!');
-    console.log(token.selectQuery());
+  if (msg.content === 'create') {
+    token.scheduler("create");
+    msg.reply('created');
+    console.log(msg);
+    //console.log(token.selectQuery());
   }
 });
 
