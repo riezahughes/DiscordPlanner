@@ -1,0 +1,24 @@
+{
+  "name": "discordplanner",
+  "version": "1.0.0",
+  "description": "A quick little fun tool",
+  "main": "app.js",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "node-mysql": "^0.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/riezahughes/DiscordPlanner.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/riezahughes/DiscordPlanner/issues"
+  },
+  "homepage": "https://github.com/riezahughes/DiscordPlanner#readme"
+}
