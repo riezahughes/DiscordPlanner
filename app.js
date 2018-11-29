@@ -17,7 +17,7 @@ var connection = mysql.createConnection({
 });
 connection.connect();
 console.log("connected");
-connection.query('CREATE TABLE IF NOT EXISTS schedule (schedule_id int(10) NOT NULL, admin_nickname varchar(254) NOT NULL, admin_discord_id bigint(18) NOT NULL, guild_id bigint(18) NOT NULL, PRIMARY KEY(schedule_id));', function(err, rows, fields) {
+connection.query('CREATE TABLE IF NOT EXISTS schedule (schedule_id int(10) NOT NULL AUTO_INCREMENT, admin_discord_id bigint(18) NOT NULL, guild_id bigint(18) NOT NULL, PRIMARY KEY(schedule_id));', function(err, rows, fields) {
    //CREATE TABLE  registered_users (id int(11) NOT NULL AUTO_INCREMENT, schedule_id int(10) NOT NULL, discord_schedule_user_id int(18) NOT NULL, PRIMARY KEY(id) FOREIGN KEY (schedule_id) REFERENCES schedule(schedule_id)); END
   if (!err){
     console.log('Checking for table 1');
@@ -70,8 +70,14 @@ client.on('ready', () => {
 client.on('message', msg => {
   if (msg.content === '!create') {
     const createPlanner = require('./functions/create_planner.js');
-    let results = createPlanner.createplanner();
+    let results = createPlanner.createPlanner(msg.author.id, msg.guild.id);
     console.log(msg.author.id);
+  }
+  if (msg.content === '!destroy') {
+    const destroyPlanner = require('./functions/destroy_planner.js');
+    let results = destroyPlanner.destroyPlanner(msg.author.id);
+    console.log(msg.author.id);
+    console.log(msg.author.tag);
   }
 });
 
