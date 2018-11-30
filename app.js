@@ -79,6 +79,11 @@ client.on('message', msg => {
     console.log(msg.author.id);
     console.log(msg.author.tag);
   }
+  if (msg.content === '!display') {
+    const displayPlanner = require('/functions/display_planner.js');
+    let results = displayPlanner.displayPlanner(msg.author.id);
+    console.log(msg.author.id);
+  }
 });
 
 //connect the discord bot
